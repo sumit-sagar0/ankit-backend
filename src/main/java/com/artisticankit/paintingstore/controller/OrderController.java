@@ -84,7 +84,7 @@ public class OrderController {
                 Optional<Painting> paintingOpt = paintingRepository.findById(paintingId);
                 if (paintingOpt.isPresent()) {
                     Painting painting = paintingOpt.get();
-                    painting.setStatus("SOLD");
+                    painting.setAvailabilityStatus(Painting.AvailabilityStatus.SOLD);
                     paintingRepository.save(painting);
                 }
                 return ResponseEntity.ok("{\"status\": \"success\", \"message\": \"Payment verified\"}");
