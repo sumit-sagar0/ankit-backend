@@ -1,6 +1,6 @@
 package com.artisticankit.paintingstore.controller;
 
-import com.artisticankit.paintingstore.model.Painting;
+import com.artisticankit.paintingstore.entity.Painting;
 import com.artisticankit.paintingstore.repository.PaintingRepository;
 import com.razorpay.Order;
 import com.razorpay.RazorpayClient;
