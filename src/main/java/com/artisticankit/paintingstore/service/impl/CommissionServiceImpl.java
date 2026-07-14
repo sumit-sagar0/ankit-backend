@@ -52,6 +52,13 @@ public class CommissionServiceImpl implements CommissionService {
         throw new RuntimeException("Commission request not found with id: " + id);
     }
 
+    @Override
+    public void deleteCommission(Long id) {
+        CommissionRequest request = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Commission request not found with id: " + id));
+        repository.delete(request);
+    }
+
     private void sendMockEmail(CommissionRequest request) {
         System.out.println("==================================================");
         System.out.println("📧 SIMULATED EMAIL DISPATCH (No SMTP configured)");

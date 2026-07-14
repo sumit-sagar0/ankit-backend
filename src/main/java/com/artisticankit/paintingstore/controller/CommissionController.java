@@ -41,4 +41,14 @@ public class CommissionController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteCommission(@PathVariable Long id) {
+        try {
+            commissionService.deleteCommission(id);
+            return ResponseEntity.ok().body("{\"message\":\"Commission deleted successfully\"}");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("{\"error\":\"" + e.getMessage() + "\"}");
+        }
+    }
 }

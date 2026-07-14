@@ -9,4 +9,6 @@ public interface CommissionService {
     CommissionRequest submitCommission(CommissionDTO dto);
     List<CommissionRequest> getAllCommissions();
     CommissionRequest updateStatus(Long id, String status);
+    
+    void deleteCommission(Long id);
 }
